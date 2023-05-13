@@ -1,0 +1,14 @@
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\bin\Debug\net7.0\Pet.Commerce.Domain.deps.json
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\bin\Debug\net7.0\Pet.Commerce.Domain.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\bin\Debug\net7.0\Pet.Commerce.Domain.pdb
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.csproj.AssemblyReference.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.AssemblyInfoInputs.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.AssemblyInfo.cs
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\refint\Pet.Commerce.Domain.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.pdb
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\ref\Pet.Commerce.Domain.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\bin\Debug\net7.0\Pet.Commerce.Domain.runtimeconfig.json
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Domain\obj\Debug\net7.0\Pet.Commerce.Domain.genruntimeconfig.cache

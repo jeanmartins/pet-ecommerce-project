@@ -1,0 +1,15 @@
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\bin\Debug\net7.0\Pet.Commerce.Infra.deps.json
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\bin\Debug\net7.0\Pet.Commerce.Infra.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\bin\Debug\net7.0\Pet.Commerce.Infra.pdb
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.csproj.AssemblyReference.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.AssemblyInfoInputs.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.AssemblyInfo.cs
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.csproj.CoreCompileInputs.cache
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\refint\Pet.Commerce.Infra.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.pdb
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\ref\Pet.Commerce.Infra.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\bin\Debug\net7.0\Pet.Commerce.Domain.dll
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\bin\Debug\net7.0\Pet.Commerce.Domain.pdb
+C:\Users\jean_martins\source\repos\pet-ecommerce\Pet.Commerce.Infra\obj\Debug\net7.0\Pet.Commerce.Infra.csproj.CopyComplete

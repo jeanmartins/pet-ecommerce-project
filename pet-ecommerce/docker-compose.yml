@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  ecommerce-database:
+    container_name: ecommerce-database
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user123
+      POSTGRES_DB: ecommerce
+    ports:
+      - '5433:5432'
+    volumes:
+      - ./Pet.Commerce.Infra/Scripts:/docker-entrypoint-initdb.d
+
+  pet-api:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    depends_on:
+      - ecommerce-database
+
+
+      
