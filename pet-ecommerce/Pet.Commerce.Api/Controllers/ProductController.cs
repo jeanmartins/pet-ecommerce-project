@@ -16,9 +16,9 @@ namespace Pet.Commerce.Api.Controllers
 
         [HttpGet]
         [Route("get")]
-        public Task<IList<GetProductsResponse>> GetProducts(GetProductsCommand getProductsRequest)
+        public Task<IEnumerable<GetProductsResponse>> GetProducts(GetProductsCommand getProductsCommand)
         {
-            return _mediator.Send(getProductsRequest);
+            return _mediator.Send(getProductsCommand);
         }
     }
 }

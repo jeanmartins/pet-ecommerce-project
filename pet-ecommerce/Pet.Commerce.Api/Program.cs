@@ -15,8 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMvc();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
-builder.Services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResponse>, CreateUserHandler>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>, GetProductsHandler>();
 string connectionString = builder.Configuration.GetConnectionString("ConnectionString");
 builder.Services.AddDbContext<EcommerceContext>(opt => opt.UseNpgsql(connectionString));
 
