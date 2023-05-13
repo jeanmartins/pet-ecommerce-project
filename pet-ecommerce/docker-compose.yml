@@ -19,7 +19,8 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      ASPNETCORE_ENVIRONMENT: Development
+      - ConnectionStrings__ConnectionString=User ID=user;Password=user123;Server=ecommerce-database;Port=5432;Database=ecommerce;
+      - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - ecommerce-database
 
