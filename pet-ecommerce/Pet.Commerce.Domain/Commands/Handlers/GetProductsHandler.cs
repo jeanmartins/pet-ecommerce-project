@@ -6,24 +6,23 @@ using Pet.Commerce.Domain.Models;
 
 namespace Pet.Commerce.Domain.Commands.Handlers
 {
-    public class GetProductsHandler : IRequestHandler<GetProductsCommand, IList<GetProductsResponse>>
+    public class GetProductsHandler : IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>
     {
         private readonly IProductRepository _productRepository;
         public GetProductsHandler(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
-        //public Task<IList<CreateUserResponse>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
-        //{
 
-        //    var list = _productRepository.Get();
-
-        //    return Task.FromResult(new CreateUserResponse { Nome = "", Endereco = "", Email = "" });
-        //}
-
-        Task<IList<GetProductsResponse>> IRequestHandler<GetProductsCommand, IList<GetProductsResponse>>.Handle(GetProductsCommand request, CancellationToken cancellationToken)
+        public Task<IEnumerable<GetProductsResponse>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var produtos = _productRepository.GetAll();
+            List<GetProductsResponse> result = new List<GetProductsResponse>();
+            foreach (var product in produtos)
+            {
+                result.Add(new GetProductsResponse(product));
+            }
+            return Task.FromResult(result.AsEnumerable());
         }
     }
 }

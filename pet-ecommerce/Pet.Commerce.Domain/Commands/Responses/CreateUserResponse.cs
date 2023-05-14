@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pet.Commerce.Domain.Commands.Responses
 {
-    public class CreateUserResponse
+    public class CreateUserResponse : Response
     {
         public string Nome { get; set; }
 
