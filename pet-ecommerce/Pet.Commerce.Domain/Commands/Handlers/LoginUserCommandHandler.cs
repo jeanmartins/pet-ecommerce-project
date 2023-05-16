@@ -14,16 +14,9 @@ namespace Pet.Commerce.Domain.Commands.Handlers
         {
             _userRepository = userRepository;
         }
-        public Task<CreateUserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
-        {
-            Usuario usu = new Usuario { Administrador = request.Administrador, Email = request.Email, Endereco=request.Endereco, Login=request.Login, Nome=request.Nome, Senha = request.Senha };
-            _userRepository.Insert(usu);
-            return Task.FromResult(new CreateUserResponse { Nome = "", Endereco = "", Email = "" });
-        }
-
         public Task<LoginUserResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-           var isUserAutenticate = _userRepository.GetAll().Where(x => x.Login == request.Login && x.Senha == request.Senha).FirstOrDefault();
+           var isUserAutenticate = _userRepository.GetAll().Where(x => x.Email == request.Email && x.Senha == request.Senha).FirstOrDefault();
         if (isUserAutenticate != null)
             {
                 var token = TokenService.GenerateToken(isUserAutenticate);

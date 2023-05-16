@@ -15,9 +15,13 @@ namespace Pet.Commerce.Domain.Commands.Handlers
         }
         public Task<CreateUserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            Usuario usu = new Usuario { Administrador = request.Administrador, Email = request.Email, Endereco=request.Endereco, Login=request.Login, Nome=request.Nome, Senha = request.Senha };
+            if(_userRepository.GetUserByEmail(request.Email) != null)
+            {
+                return Task.FromResult(new CreateUserResponse { ErrorMessage = "Usuário já cadastrado no sistema" });
+            }
+            Usuario usu = new Usuario { Administrador = request.Administrador, Email = request.Email, Endereco=request.Endereco, Login=Guid.NewGuid().ToString("N"), Nome=request.Nome, Senha = request.Senha };
             _userRepository.Insert(usu);
-            return Task.FromResult(new CreateUserResponse { Nome = "", Endereco = "", Email = "" });
+            return Task.FromResult(new CreateUserResponse { Nome = usu.Nome, Endereco = usu.Endereco, Email = usu.Email });
         }
     }
 }

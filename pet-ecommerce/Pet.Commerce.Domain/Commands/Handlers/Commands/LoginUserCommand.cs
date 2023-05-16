@@ -5,7 +5,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers.Requests
 {
     public class LoginUserCommand : IRequest<LoginUserResponse>
     {
-        public string Login { get; set; }
+        public string Email { get; set; }
 
         public string Senha { get; set; }
     }

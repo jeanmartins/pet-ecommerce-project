@@ -9,5 +9,6 @@ namespace Pet.Commerce.Domain.IRepositories
 {
     public interface IUserRepository : IRepository<Usuario>
     {
+        public Usuario GetUserByEmail(string email);
     }
 }

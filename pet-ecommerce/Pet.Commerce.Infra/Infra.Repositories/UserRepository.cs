@@ -10,6 +10,14 @@ namespace Pet.Commerce.Infra.Infra.Repositories
 {
     public class UserRepository : Repository<Usuario>, IUserRepository
     {
-        public UserRepository(EcommerceContext ecommerceContext) : base(ecommerceContext) { }
+        private readonly EcommerceContext _context;
+        public UserRepository(EcommerceContext ecommerceContext) : base(ecommerceContext) {
+        _context = ecommerceContext;
+        }
+
+        public Usuario GetUserByEmail(string email)
+        {
+            return _context.Usuarios.FirstOrDefault(usu => usu.Email == email);
+        }
     }
 }

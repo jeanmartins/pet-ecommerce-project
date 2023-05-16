@@ -25,7 +25,6 @@ namespace Pet.Commerce.Api.Controllers
         [Route("login")]
         public Task<LoginUserResponse> LoginUser([FromBody] LoginUserCommand command) { 
             return _mediator.Send(command);
-           
         }
         [HttpPost]
         [Route("updateUser")]
