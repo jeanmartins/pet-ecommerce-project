@@ -33,5 +33,13 @@ namespace Pet.Commerce.Api.Controllers
         {
             return _mediator.Send(command);
         }
+
+        [HttpDelete]
+        [Route("deleteUser")]
+        [Authorize]
+        public Task<bool> DeleteUser([FromBody] DeleteUserCommand command)
+        {
+            return _mediator.Send(command);
+        }
     }
 }

@@ -73,6 +73,7 @@ builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetPr
 builder.Services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResponse>, CreateUserHandler>();
 builder.Services.AddScoped<IRequestHandler<LoginUserCommand, LoginUserResponse>, LoginUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<UpdateUserCommand, CreateUserResponse>, UpdateUserCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, DeleteUserCommandHandler>();
 
 
 string connectionString = builder.Configuration.GetConnectionString("ConnectionString");

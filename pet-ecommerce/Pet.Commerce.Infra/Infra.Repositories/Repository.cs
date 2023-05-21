@@ -11,10 +11,11 @@ namespace Pet.Commerce.Infra.Infra.Repositories
             _ecommerceContext = ecommerceContext;
         }
 
-        public void Delete(T entidade)
+        public bool Delete(T entidade)
         {
             _ecommerceContext.Set<T>().Remove(entidade);
-            _ecommerceContext.SaveChanges();
+            var result = _ecommerceContext.SaveChanges();
+            return Convert.ToBoolean(result);
         }
         public T Insert(T entidade)
         {

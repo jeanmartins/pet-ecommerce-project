@@ -8,7 +8,7 @@ namespace Pet.Commerce.Domain.IRepositories
         public T Get(int Id);
         public T Insert(T entidade);
         public T Update(T entidade);
-        public void Delete(T entidade);
+        public bool Delete(T entidade);
 
     }
 }
