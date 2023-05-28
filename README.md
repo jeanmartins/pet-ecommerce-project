@@ -1,6 +1,7 @@
 # pet-ecommerce-project
 
 Passos para subir a API:
+
 Clonar o projeto
 
 Inicar o Docker Desktop
