@@ -497,3 +497,32 @@ Thumbs.db
 *.db-shm
 *.db-wal
 /pet-ecommerce/.vscode
+
+# Arquivos de build do Visual Studio
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Oo]bj/
+
+
+# Arquivos de configuração do Visual Studio
+*.suo
+*.user
+*.sln.docstates
+
+# Cache do ReSharper
+_ReSharper*/
+
+# Arquivos de compilação do Visual Studio
+*.dll
+*.pdb
+*.exe
+*.cache
+*.sbr
+*.ilk
+*.log
+*.tlog
+*.vspscc
+*.vssscc

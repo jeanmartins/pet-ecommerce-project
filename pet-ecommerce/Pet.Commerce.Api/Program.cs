@@ -12,13 +12,11 @@ using Microsoft.IdentityModel.Tokens;
 using Pet.Commerce.Domain.Services;
 using System.Text;
 using Microsoft.OpenApi.Models;
-using static System.Net.Mime.MediaTypeNames;
-using System.Diagnostics.Metrics;
-using System.Reflection.Metadata;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen( c=> {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "apiagenda", Version = "v1" });
 
@@ -67,11 +65,20 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddCors(options => options.AddPolicy("AllowAnyOrigin", builder =>
+{
+    builder.AllowAnyOrigin();
+    builder.AllowAnyMethod();
+    builder.AllowAnyHeader();
+}));
+
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>, GetProductsHandler>();
 builder.Services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResponse>, CreateUserHandler>();
 builder.Services.AddScoped<IRequestHandler<LoginUserCommand, LoginUserResponse>, LoginUserCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<GetProfileCommand, GetProfileResponse>, GetProfileCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<UpdateUserCommand, CreateUserResponse>, UpdateUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, DeleteUserCommandHandler>();
 
@@ -88,6 +95,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAnyOrigin");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

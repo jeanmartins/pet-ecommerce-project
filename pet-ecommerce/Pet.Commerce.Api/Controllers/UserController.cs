@@ -41,5 +41,13 @@ namespace Pet.Commerce.Api.Controllers
         {
             return _mediator.Send(command);
         }
+
+        [HttpGet]
+        [Route("getProfile/{Email}")]
+        [Authorize]
+        public Task<GetProfileResponse> GetProfile(GetProfileCommand command)
+        {
+            return _mediator.Send(command);
+        }
     }
 }

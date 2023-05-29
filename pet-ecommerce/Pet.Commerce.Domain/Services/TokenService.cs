@@ -17,7 +17,7 @@ namespace Pet.Commerce.Domain.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Login.ToString()),
+                    new Claim(ClaimTypes.Name, user.Email.ToString()),
                     new Claim(ClaimTypes.Role, user.Administrador ? "Administrador" : "Usuario")
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
