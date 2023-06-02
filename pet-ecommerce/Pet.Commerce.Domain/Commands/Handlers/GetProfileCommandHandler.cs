@@ -26,7 +26,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
             if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(request.Email) && userName == request.Email)
             {
                 var user = _userRepository.GetUserByEmail(userName);
-                return Task.FromResult(new GetProfileResponse { Email = user.Email, Endereco = user.Endereco, Nome = user.Nome, Senha = user.Senha });
+                return Task.FromResult(new GetProfileResponse { Email = user.Email, Endereco = user.Endereco, Nome = user.Nome, Senha = user.Senha, Admin = user.Administrador });
             }
             return Task.FromResult(new GetProfileResponse() { ErrorMessage = "Ocorreu um erro ao realizar essa requisição" });
         }
