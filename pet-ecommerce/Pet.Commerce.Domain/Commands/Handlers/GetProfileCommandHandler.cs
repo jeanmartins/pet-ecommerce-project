@@ -21,11 +21,11 @@ namespace Pet.Commerce.Domain.Commands.Handlers
 
         public Task<GetProfileResponse> Handle(GetProfileCommand request, CancellationToken cancellationToken)
         {
-            var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
+            var userEmail = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
 
-            if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(request.Email) && userName == request.Email)
+            if(!string.IsNullOrEmpty(userEmail) && !string.IsNullOrEmpty(request.Email) && userEmail == request.Email)
             {
-                var user = _userRepository.GetUserByEmail(userName);
+                var user = _userRepository.GetUserByEmail(userEmail);
                 return Task.FromResult(new GetProfileResponse { Email = user.Email, Endereco = user.Endereco, Nome = user.Nome, Senha = user.Senha, Admin = user.Administrador });
             }
             return Task.FromResult(new GetProfileResponse() { ErrorMessage = "Ocorreu um erro ao realizar essa requisição" });

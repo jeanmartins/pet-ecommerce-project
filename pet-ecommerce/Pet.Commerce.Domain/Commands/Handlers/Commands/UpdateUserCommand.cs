@@ -5,7 +5,6 @@ namespace Pet.Commerce.Domain.Commands.Handlers.Requests
 {
     public class UpdateUserCommand : IRequest<CreateUserResponse>
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
 
         public string Endereco { get; set; }
