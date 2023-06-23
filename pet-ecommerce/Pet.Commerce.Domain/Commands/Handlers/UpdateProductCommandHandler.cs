@@ -26,7 +26,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
                 product.Preco = request.Preco != 0 && request.Preco != null ? request.Preco : product.Preco;
                 product.Descricao = !string.IsNullOrEmpty(request.Descricao) ? request.Descricao : product.Descricao;
                 product.CategoriaId = request.CategoriaId != null ? request.CategoriaId : product.CategoriaId;
-                product.Quantidade = request.Quantidade != 0 && request.Quantidade != null ? request.Quantidade : product.Quantidade;
+                product.Quantidade = request.Quantidade != null ? request.Quantidade : product.Quantidade;
 
                 _productRepository.Update(product);
                 return Task.FromResult(true);

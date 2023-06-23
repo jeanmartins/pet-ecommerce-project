@@ -7,6 +7,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers.Requests
     {
         public int? Id { get; set; }
         public string Descricao { get; set; }
+        public string Foto { get; set; }
 
         public decimal Preco { get; set; }
 

@@ -5,7 +5,7 @@ using Pet.Commerce.Domain.Commands.Responses;
 
 namespace Pet.Commerce.Api.Controllers
 {
-    [Route("ap1/v1/product")]
+    [Route("api/v1/product")]
     public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -23,20 +23,20 @@ namespace Pet.Commerce.Api.Controllers
 
         [HttpPost]
         [Route("create")]
-        public Task<bool> InsertProduct(CreateProductCommand createProductCommand)
+        public Task<bool> InsertProduct([FromBody] CreateProductCommand createProductCommand)
         {
             return _mediator.Send(createProductCommand);
         }
         [HttpPost]
         [Route("update")]
-        public Task<bool> UpdateProduct(UpdateProductCommand updateProductCommand)
+        public Task<bool> UpdateProduct([FromBody] UpdateProductCommand updateProductCommand)
         {
             return _mediator.Send(updateProductCommand);
         }
 
         [HttpDelete]
         [Route("delete")]
-        public Task<bool> DeleteProduct(DeleteProductCommand deleteProductCommand)
+        public Task<bool> DeleteProduct([FromBody] DeleteProductCommand deleteProductCommand)
         {
             return _mediator.Send(deleteProductCommand);
         }
