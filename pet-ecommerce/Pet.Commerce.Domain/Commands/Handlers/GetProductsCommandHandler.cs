@@ -6,10 +6,10 @@ using Pet.Commerce.Domain.Models;
 
 namespace Pet.Commerce.Domain.Commands.Handlers
 {
-    public class GetProductsHandler : IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>
+    public class GetProductsCommandHandler : IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>
     {
         private readonly IProductRepository _productRepository;
-        public GetProductsHandler(IProductRepository productRepository)
+        public GetProductsCommandHandler(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }

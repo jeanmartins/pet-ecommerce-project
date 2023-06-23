@@ -73,17 +73,26 @@ builder.Services.AddCors(options => options.AddPolicy("AllowAnyOrigin", builder 
 }));
 
 builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
 builder.Services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResponse>, CreateUserHandler>();
 builder.Services.AddScoped<IRequestHandler<LoginUserCommand, LoginUserResponse>, LoginUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<GetProfileCommand, GetProfileResponse>, GetProfileCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<UpdateUserCommand, CreateUserResponse>, UpdateUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, DeleteUserCommandHandler>();
+
 builder.Services.AddScoped<IRequestHandler<CreateProductCommand, bool>, CreateProductCommandHandler>();
-builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>, GetProductsHandler>();
+builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>, GetProductsCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<UpdateProductCommand, bool>, UpdateProductCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<DeleteProductCommand, bool>, DeleteProductCommandHandler>();
+
+builder.Services.AddScoped<IRequestHandler<CreateCategoryCommand, bool>, CreateCategoryCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<GetCategoriasCommand, IEnumerable<GetCategoriasResponse>>, GetCategoriasCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<UpdateCategoryCommand, bool>, UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<DeleteCategoryCommand, bool>, DeleteCategoryCommandHandler>();
 
 
 string connectionString = builder.Configuration.GetConnectionString("ConnectionString");
