@@ -20,5 +20,25 @@ namespace Pet.Commerce.Api.Controllers
         {
             return _mediator.Send(getProductsCommand);
         }
+
+        [HttpPost]
+        [Route("create")]
+        public Task<bool> InsertProduct(CreateProductCommand createProductCommand)
+        {
+            return _mediator.Send(createProductCommand);
+        }
+        [HttpPost]
+        [Route("update")]
+        public Task<bool> UpdateProduct(UpdateProductCommand updateProductCommand)
+        {
+            return _mediator.Send(updateProductCommand);
+        }
+
+        [HttpDelete]
+        [Route("delete")]
+        public Task<bool> DeleteProduct(DeleteProductCommand deleteProductCommand)
+        {
+            return _mediator.Send(deleteProductCommand);
+        }
     }
 }
