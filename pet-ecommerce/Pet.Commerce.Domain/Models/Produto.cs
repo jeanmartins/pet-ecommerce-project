@@ -1,8 +1,12 @@
-﻿namespace Pet.Commerce.Domain.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Pet.Commerce.Domain.Models;
 
 public partial class Produto
 {
     public int Id { get; set; }
+
     public string Descricao { get; set; } = null!;
 
     public decimal Preco { get; set; }

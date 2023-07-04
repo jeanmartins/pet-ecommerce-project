@@ -77,12 +77,19 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ISalesProductRepository, SalesProductRepository>();
+builder.Services.AddScoped<ISalesRepository, SalesRepository>();
+
 
 builder.Services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResponse>, CreateUserHandler>();
 builder.Services.AddScoped<IRequestHandler<LoginUserCommand, LoginUserResponse>, LoginUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<GetProfileCommand, GetProfileResponse>, GetProfileCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<UpdateUserCommand, CreateUserResponse>, UpdateUserCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, DeleteUserCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<InsertUserSaleCommand, bool>, InsertUserSaleCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<DeleteUserSaleCommand, bool>, DeleteUserSaleCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<GetUserSalesCommand, IEnumerable<GetUserSalesResponse>>, GetUserSalesCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<GetAllUsersSalesCommand, IEnumerable<GetUserSalesResponse>>, GetAllUsersSalesCommandHandler>();
 
 builder.Services.AddScoped<IRequestHandler<CreateProductCommand, bool>, CreateProductCommandHandler>();
 builder.Services.AddScoped<IRequestHandler<GetProductsCommand, IEnumerable<GetProductsResponse>>, GetProductsCommandHandler>();

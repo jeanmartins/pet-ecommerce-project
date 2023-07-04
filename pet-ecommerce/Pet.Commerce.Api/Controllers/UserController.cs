@@ -49,5 +49,35 @@ namespace Pet.Commerce.Api.Controllers
         {
             return _mediator.Send(command);
         }
+        [HttpGet]
+        [Route("getUserSales")]
+        [Authorize]
+        public Task<IEnumerable<GetUserSalesResponse>> GetUserSales (GetUserSalesCommand command)
+        {
+            return _mediator.Send(command);
+        }
+        [HttpPost]
+        [Route("insertUserSales")]
+        [Authorize]
+        public Task<bool> InsertUserSale( [FromBody] InsertUserSaleCommand command)
+        {
+            return _mediator.Send(command);
+        }
+
+        [HttpGet]
+        [Route("getAllUserSales")]
+     
+        public Task<IEnumerable<GetUserSalesResponse>> GetAllUserSales(GetAllUsersSalesCommand command)
+        {
+            return _mediator.Send(command);
+        }
+
+        [HttpDelete]
+        [Route("deleteUserSale")]
+       
+        public Task<bool> DeleteUserSale([FromBody] DeleteUserSaleCommand command)
+        {
+            return _mediator.Send(command);
+        }
     }
 }

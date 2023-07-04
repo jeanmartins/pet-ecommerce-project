@@ -20,7 +20,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
         if (isUserAutenticate != null)
             {
                 var token = TokenService.GenerateToken(isUserAutenticate);
-                return Task.FromResult(new LoginUserResponse { Nome = isUserAutenticate.Nome, Token = token , Id = isUserAutenticate.Id}); ;
+                return Task.FromResult(new LoginUserResponse { Nome = isUserAutenticate.Nome, Token = token , Id = isUserAutenticate.Id, Role = isUserAutenticate.Administrador}); ;
             }
             return Task.FromResult(new LoginUserResponse() { ErrorMessage = "Usuário ou senha inválidos" });
         }

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Pet.Commerce.Domain.Models;
 
@@ -23,13 +25,11 @@ public partial class EcommerceContext : DbContext
 
     public virtual DbSet<Venda> Venda { get; set; }
 
+ 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Categoria>(entity =>
         {
-
-            entity.Property(e => e.Id).HasColumnName("id");
-
             entity.HasKey(e => e.Id).HasName("categoria_pkey");
 
             entity.ToTable("categoria");
@@ -100,6 +100,9 @@ public partial class EcommerceContext : DbContext
             entity.Property(e => e.VendaId).HasColumnName("venda_id");
             entity.Property(e => e.ProdutoId).HasColumnName("produto_id");
             entity.Property(e => e.Quantidade).HasColumnName("quantidade");
+            entity.Property(e => e.Preco)
+               .HasPrecision(15, 2)
+               .HasColumnName("preco");
 
             entity.HasOne(d => d.Produto).WithMany(p => p.VendaProdutos)
                 .HasForeignKey(d => d.ProdutoId)
@@ -118,12 +121,9 @@ public partial class EcommerceContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DataHora)
-                .HasMaxLength(2000)
-                .HasColumnName("data_hora");
-            entity.Property(e => e.Preco)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
-                .HasColumnName("preco");
+                .HasColumnName("data_hora");
             entity.Property(e => e.UsuarioId).HasColumnName("usuario_id");
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.Venda)

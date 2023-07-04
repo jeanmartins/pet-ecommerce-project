@@ -11,6 +11,8 @@ public partial class VendaProduto
 
     public int Quantidade { get; set; }
 
+    public decimal Preco { get; set; }
+
     public virtual Produto Produto { get; set; } = null!;
 
     public virtual Venda Venda { get; set; } = null!;

@@ -6,9 +6,8 @@ namespace Pet.Commerce.Domain.Models;
 public partial class Venda
 {
     public int Id { get; set; }
-    public string DataHora { get; set; } = null!;
 
-    public DateTime Preco { get; set; }
+    public DateTime DataHora { get; set; }
 
     public int UsuarioId { get; set; }
 
