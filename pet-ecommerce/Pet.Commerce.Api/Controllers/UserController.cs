@@ -66,7 +66,7 @@ namespace Pet.Commerce.Api.Controllers
 
         [HttpGet]
         [Route("getAllUserSales")]
-     
+        [Authorize]
         public Task<IEnumerable<GetUserSalesResponse>> GetAllUserSales(GetAllUsersSalesCommand command)
         {
             return _mediator.Send(command);
@@ -74,7 +74,7 @@ namespace Pet.Commerce.Api.Controllers
 
         [HttpDelete]
         [Route("deleteUserSale")]
-       
+        [Authorize]
         public Task<bool> DeleteUserSale([FromBody] DeleteUserSaleCommand command)
         {
             return _mediator.Send(command);
