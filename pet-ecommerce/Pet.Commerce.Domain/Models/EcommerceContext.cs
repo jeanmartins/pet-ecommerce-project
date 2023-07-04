@@ -40,6 +40,11 @@ public partial class EcommerceContext : DbContext
                 .HasColumnName("descricao");
         });
 
+        modelBuilder.Entity<Categoria>().HasData(
+            new Categoria() { Id = 1, Descricao = "Ração" },
+            new Categoria() { Id = 2, Descricao = "Brinquedo" }
+            );
+
         modelBuilder.Entity<Produto>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("produto_pkey");
@@ -90,6 +95,8 @@ public partial class EcommerceContext : DbContext
                 .HasMaxLength(16)
                 .HasColumnName("senha");
         });
+
+        modelBuilder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Administrador = true, Email = "admin@gmail.com", Endereco = "", Login= "admin", Nome="ADMIN", Senha = "admin"});
 
         modelBuilder.Entity<VendaProduto>(entity =>
         {
