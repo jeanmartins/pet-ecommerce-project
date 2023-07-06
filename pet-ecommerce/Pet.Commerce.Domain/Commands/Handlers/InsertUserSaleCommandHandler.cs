@@ -43,7 +43,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
                         {
                             var venda = new Venda { DataHora = DateTime.Now, Usuario = user, UsuarioId = user.Id };
                             _salesRepository.Insert(venda);
-                            var vendaProduto = new VendaProduto { Produto = produto, ProdutoId = produtoCompra.IdProduto = produto.Id, Quantidade = produtoCompra.Quantidade, Venda = venda, VendaId = venda.Id, Preco= produto.Preco };
+                            var vendaProduto = new VendaProduto { Produto = produto, ProdutoId = produtoCompra.IdProduto = produto.Id, Quantidade = produtoCompra.Quantidade, Venda = venda, VendaId = venda.Id, Preco= produto.Preco * produtoCompra.Quantidade };
                             _salesProductRepository.Insert(vendaProduto);
 
                             var qtd = 0;

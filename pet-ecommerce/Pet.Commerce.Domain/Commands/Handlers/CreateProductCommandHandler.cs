@@ -18,7 +18,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
         {
             try
             {
-                var result = _productRepository.Insert(new Produto { CategoriaId = request.CategoriaId, Descricao = request.Descricao, Foto = "https://cobasi.vteximg.com.br/arquivos/ids/939212/racao-golden-formula-caes-adultos-racas-pequenas-frango-arroz-mini-bits-3626279-1kg.jpg?v=638127640641870000", Preco = request.Preco, Quantidade = request.Quantidade });
+                var result = _productRepository.Insert(new Produto { CategoriaId = request.CategoriaId, Descricao = request.Descricao, Foto = !string.IsNullOrEmpty(request.Foto) ? request.Foto: "https://cobasi.vteximg.com.br/arquivos/ids/939212/racao-golden-formula-caes-adultos-racas-pequenas-frango-arroz-mini-bits-3626279-1kg.jpg?v=638127640641870000", Preco = request.Preco, Quantidade = request.Quantidade });
                 if (result != null)
                     return Task.FromResult(true);
                 return Task.FromResult(false);

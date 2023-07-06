@@ -6,7 +6,7 @@ using Pet.Commerce.Domain.Commands.Responses;
 
 namespace Pet.Commerce.Api.Controllers
 {
-    [Route("ap1/v1/user")]
+    [Route("api/v1/user")]
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;

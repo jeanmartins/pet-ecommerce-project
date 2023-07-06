@@ -27,6 +27,7 @@ namespace Pet.Commerce.Domain.Commands.Handlers
                 product.Descricao = !string.IsNullOrEmpty(request.Descricao) ? request.Descricao : product.Descricao;
                 product.CategoriaId = request.CategoriaId != null ? request.CategoriaId : product.CategoriaId;
                 product.Quantidade = request.Quantidade != null ? request.Quantidade : product.Quantidade;
+                product.Foto = !string.IsNullOrEmpty(request.Foto) ? request.Foto : product.Foto;
 
                 _productRepository.Update(product);
                 return Task.FromResult(true);
