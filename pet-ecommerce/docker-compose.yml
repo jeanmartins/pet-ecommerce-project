@@ -11,7 +11,8 @@ services:
     ports:
       - '5433:5432'
     volumes:
-      - ./Pet.Commerce.Infra/Scripts:/docker-entrypoint-initdb.d
+      - ./Pet.Commerce.Infra/Scripts/create-db.sql:/docker-entrypoint-initdb.d/create-db.sql
+      - ./Pet.Commerce.Infra/Scripts/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
 
   pet-api:
     build: .

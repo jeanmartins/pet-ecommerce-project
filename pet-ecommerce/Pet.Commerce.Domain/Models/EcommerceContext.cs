@@ -96,8 +96,6 @@ public partial class EcommerceContext : DbContext
                 .HasColumnName("senha");
         });
 
-        modelBuilder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Administrador = true, Email = "admin@gmail.com", Endereco = "", Login= "admin", Nome="ADMIN", Senha = "admin"});
-
         modelBuilder.Entity<VendaProduto>(entity =>
         {
             entity.HasKey(e => new { e.VendaId, e.ProdutoId }).HasName("venda_produto_pkey");
